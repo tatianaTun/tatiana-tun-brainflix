@@ -1,0 +1,301 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts";
+@use "../../styles/partials/mixins" as *;
+
+@forward "../../styles/partials/global";
+
+@include mobile {
+  .video {
+    &__information {
+      padding: 0 25px;
+    }
+
+    &__title {
+      font-size: 2.2rem;
+    }
+
+    &__data {
+      border-top: 2px solid $color-secondary-medium;
+      border-bottom: 2px solid $color-secondary-medium;
+      display: flex;
+      font-size: 1.2rem;
+      padding: 1.5rem 0;
+
+      &-left {
+        width: 50%;
+      }
+      &-right {
+        padding-left: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    &__channel {
+      font-weight: 600;
+      margin: 0;
+      padding-bottom: 1.5rem;
+    }
+
+    &__timestamp,
+    &__views-text,
+    &__likes-text {
+      margin: 0;
+      color: $color-primary-medium;
+      // font-weight:500;
+    }
+
+    &__views {
+      padding-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+    }
+
+    &__likes {
+      display: flex;
+      align-items: center;
+    }
+
+    &__views-logo,
+    &__likes-logo {
+      width: 30px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    &__description {
+      font-size: 1.25rem;
+      font-weight: normal;
+      color: $color-secondary-dark;
+    }
+
+    &__comments {
+      padding: 25px;
+      font-size: 1.2rem;
+    }
+
+    &__comments-count {
+      font-weight: bold;
+      margin: 0;
+    }
+
+    &__form-container {
+      display: flex;
+
+      border-bottom: 2px solid $color-secondary-medium;
+
+      & form {
+        flex: 1;
+        width: auto;
+
+        & textarea {
+          width: 100%;
+          height: 120px;
+          margin-bottom: 1rem;
+
+          &::placeholder {
+            color: $color-primary-dark;
+          }
+        }
+
+        & button {
+          padding: 1rem 0;
+          position: relative;
+
+          & img {
+            position: absolute;
+            left: 15px;
+            top: 1rem;
+            height: 1.7rem;
+          }
+        }
+      }
+    }
+    &__form-avatar {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      margin: 40px 25px 0 0;
+      object-fit: cover;
+    }
+
+    &__form-header {
+      color: $color-primary-medium;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+      margin-left: 80px;
+    }
+
+    &__comment {
+      padding: 25px 0;
+      border-bottom: 2px solid $color-secondary-medium;
+      display: flex;
+    }
+
+    &__comment-avatar {
+      box-sizing: border-box;
+      display: block;
+      width: 55px;
+      height: 55px;
+      background-color: $color-secondary-medium;
+      border-radius: 50%;
+      margin: 0 25px 0 0;
+    }
+
+    &__comment-right {
+      flex: 1;
+    }
+
+    &__comment-top {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__comment-name {
+      font-weight: 600;
+      margin-top: 0;
+    }
+
+    &__comment-date {
+      color: $color-primary-medium;
+      margin-top: 0;
+    }
+
+    &__comment-text {
+      margin: 0;
+    }
+  }
+}
+
+@include tablet {
+  .video {
+    &__information {
+      padding: 0 45px;
+    }
+
+    &__title {
+      font-size: 2.7rem;
+      margin-bottom: 0;
+    }
+
+    &__data {
+      border-top: none;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.2rem;
+      padding-bottom: 0.8rem;
+
+      & p {
+        display: inline-block;
+      }
+
+      &-right {
+        flex-direction: row;
+      }
+    }
+
+    &__channel {
+      font-weight: bold;
+      margin-right: 40px;
+      padding-bottom: 0;
+    }
+
+    &__timestamp,
+    &__views-text,
+    &__likes-text {
+      font-size: 1rem;
+    }
+
+    &__views {
+      padding-bottom: 0;
+      padding-right: 40px;
+    }
+
+    &__likes-logo {
+      width: 25px;
+    }
+
+    &__description {
+      margin: 2rem 0;
+    }
+
+    &__comments {
+      padding: 0 45px;
+    }
+
+    &__form-container {
+      display: flex;
+      padding-bottom: 25px;
+
+      & form {
+        display: flex;
+        justify-content: space-between;
+
+        & textarea {
+          flex: 1;
+          height: 3.5rem;
+          margin-bottom: 1rem;
+          margin-right: 30px;
+
+          &::placeholder {
+            color: $color-primary-dark;
+          }
+        }
+
+        & button {
+          width: 200px;
+          font-size: 1rem;
+          padding: 0;
+          height: 3.5rem;
+
+          & img {
+            left: 15px;
+            top: 1rem;
+            height: 1.6rem;
+          }
+        }
+      }
+    }
+    &__form-avatar {
+      margin: 0 25px 0 0;
+    }
+
+    &__form-header {
+      font-size: 1.1rem;
+      margin: 2rem 0 0.5rem 80px;
+    }
+
+    &__comment-avatar {
+      padding: 0 16px;
+    }
+  }
+}
+
+@include desktop {
+  .video {
+    flex: 1;
+
+    &__information,
+    &__comments {
+      padding: 0;
+    }
+
+    &__form-header {
+      margin-left: 100px;
+    }
+
+    &__form-avatar,
+    &__comment-avatar {
+      margin-right: 45px;
+    }
+
+    &__data,
+    &__description,
+    &__form-container,
+    &__comment {
+      padding-right: 45px;
+    }
+  }
+}

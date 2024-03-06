@@ -1,0 +1,139 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts";
+@use "../../styles/partials/mixins" as *;
+@forward "../../styles/partials/global";
+
+@include mobile {
+  .header {
+    padding: 20px 25px;
+    display: flex;
+    flex-direction: column;
+
+    & Link {
+      text-align: center;
+    }
+
+    &__logo {
+      height: 35px;
+      display: block;
+      margin: auto;
+    }
+
+    &__right-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    & form {
+      margin: 25px 0;
+      width: 82%;
+      position: relative;
+
+      & input {
+        border: 2px solid $color-secondary-medium;
+        border-radius: 5px;
+        background-color: $color-secondary-light;
+        width: 100%;
+        padding: 1rem 3rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+
+        &::placeholder {
+          font-weight: normal;
+          font-size: 1.1rem;
+        }
+      }
+
+      & img {
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+        height: 1.5rem;
+      }
+    }
+
+    &__avatar {
+      display: inline-block;
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      position: absolute;
+      right: 25px;
+      top: 80px;
+      object-fit: cover;
+    }
+
+    & button {
+      position: relative;
+
+      & img {
+        position: absolute;
+        left: 15px;
+        top: 0.7rem;
+        height: 2rem;
+      }
+    }
+
+    &__upload-link {
+      text-decoration: none;
+      width: 100%;
+      padding: 1.2rem 0;
+      color: $color-primary-light;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+  }
+}
+
+@include tablet {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 45px;
+
+    &__logo {
+      height: 30px;
+    }
+
+    &__right-container {
+      flex-direction: row;
+    }
+
+    & form {
+      margin: 0;
+      width: 30vw;
+      margin-right: 30px;
+
+      & input {
+        padding: 1rem 0 1rem 3rem;
+      }
+
+      & img {
+        height: 1.5rem;
+      }
+    }
+
+    &__avatar {
+      position: static;
+      right: 25px;
+      top: 85px;
+    }
+
+    & button {
+      width: 20vw;
+      height: 3.5rem;
+      margin-right: 30px;
+    }
+  }
+}
+
+@include desktop {
+  .header {
+    padding: 20px 150px;
+
+    &__right-container {
+      width: 50%;
+    }
+  }
+}
