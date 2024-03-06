@@ -1,0 +1,70 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts";
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+@forward "../../styles/partials/global";
+
+@include mobile {
+  .videos {
+    padding: 0 25px 50px;
+
+    &__header {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: $color-primary-medium;
+      margin: 0.5rem 0;
+    }
+
+    &__link {
+      text-decoration: none;
+    }
+
+    &__card {
+      padding-top: 20px;
+      display: flex;
+
+      & img {
+        width: 150px;
+        height: 90px;
+        border-radius: 10px;
+        margin-right: 25px;
+      }
+    }
+
+    &__details {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 5px 0;
+    }
+
+    &__title,
+    &__channel {
+      margin: 0;
+    }
+
+    &__channel {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@include tablet {
+  .videos {
+    padding: 45px;
+
+    &__card {
+      padding-top: 30px;
+      display: flex;
+    }
+  }
+}
+
+@include desktop {
+  .videos {
+    width:400px;
+    border-left:2px solid $color-secondary-medium;
+    padding-right: 0;
+  }
+}
