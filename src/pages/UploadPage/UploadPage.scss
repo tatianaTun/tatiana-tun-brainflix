@@ -1,0 +1,96 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/fonts";
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+@forward "../../styles/partials/global";
+
+@include mobile {
+  .upload {
+    border-top: 2px solid $color-secondary-medium;
+    padding: 20px 25px;
+
+    &__title {
+      font-size: 2.1rem;
+    }
+
+    &__section {
+      margin: 30px 0;
+    }
+
+    & h3 {
+      color: $color-primary-medium;
+      font-weight: 600;
+      margin: 0.5rem 0;
+    }
+
+    &__thumbnail {
+      width: 100%;
+    }
+
+    & input {
+      width: 100%;
+    }
+
+    & textarea {
+      width: 100%;
+      height: 120px;
+    }
+
+    &__submit-button {
+      position: relative;
+
+      & img {
+        position: absolute;
+        left: 15px;
+        top: 1rem;
+        height: 2rem;
+      }
+    }
+    &__cancel-button {
+      color: $color-primary-blue;
+      background-color: $color-primary-light;
+      margin-top: 30px;
+    }
+  }
+}
+
+@include tablet {
+  .upload {
+    padding: 25px 45px;
+
+    &__title {
+      font-size: 2.5rem;
+    }
+
+    &__sections {
+      border-top: 2px solid $color-secondary-medium;
+      border-bottom: 2px solid $color-secondary-medium;
+    }
+
+    &__thumbnail {
+      width: 50%;
+    }
+
+    &__buttons {
+      padding-top: 30px;
+      position: relative;
+    }
+
+    &__submit-button {
+      width: 230px;
+      position: absolute;
+      right: 0;
+    }
+
+    &__cancel-button {
+      width: 200px;
+      position: absolute;
+      right: 260px;
+      margin-top: 0;
+    }
+  }
+}
+
+@include desktop {
+}
