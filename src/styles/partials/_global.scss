@@ -1,0 +1,44 @@
+@use "./colors" as *;
+@use "./mixins" as *;
+
+* {
+  font-family: "Avenir Next";
+  color: $color-primary-dark;
+}
+
+@include mobile {
+  input,
+  textarea {
+    border: 2px solid $color-secondary-medium;
+    border-radius: 5px;
+    background-color: $color-secondary-light;
+    padding: 1rem 0 1rem 1rem;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: $color-primary-dark;
+      font-size: 1.2rem;
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: 1.2rem 0;
+    border: none;
+    background-color: $color-primary-blue;
+    color: $color-primary-light;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border-radius: 5px;
+  }
+
+  p {
+    line-height: 140%;
+  }
+}
+
+@include tablet {
+}
+
+@include desktop {
+}

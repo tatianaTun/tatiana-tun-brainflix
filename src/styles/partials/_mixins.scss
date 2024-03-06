@@ -1,0 +1,26 @@
+@use "variables" as *;
+
+//For styping headers so they do not overflow into second line
+// @mixin mobile-small {
+//     @media (min-width: 320px) {
+//         @content;
+//       }
+// }
+
+@mixin mobile {
+  @media (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
