@@ -18,7 +18,9 @@
       margin: 30px 0;
     }
 
-    & h3 {
+    &__thumbnail-header,
+    &__title-header,
+    &__description-header {
       color: $color-primary-medium;
       font-weight: 600;
       margin: 0.5rem 0;
@@ -68,6 +70,10 @@
       border-bottom: 2px solid $color-secondary-medium;
     }
 
+    &__thumbnail-header {
+      margin-top: 50px;
+    }
+
     &__thumbnail {
       width: 50%;
     }
@@ -93,4 +99,23 @@
 }
 
 @include desktop {
+  .upload {
+    padding: 25px 150px;
+
+    &__thumbnail-header {
+      margin-top: 0px;
+    }
+    &__thumbnail {
+      width: 440px;
+    }
+
+    &__sections {
+      display: flex;
+    }
+
+    &__input-sections {
+      margin-left: 25px;
+      flex: 1;
+    }
+  }
 }

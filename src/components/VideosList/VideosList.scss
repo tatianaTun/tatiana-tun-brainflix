@@ -54,6 +54,10 @@
   .videos {
     padding: 45px;
 
+    &__header {
+      font-size: 1rem;
+    }
+
     &__card {
       padding-top: 30px;
       display: flex;
@@ -63,8 +67,8 @@
 
 @include desktop {
   .videos {
-    width:400px;
-    border-left:2px solid $color-secondary-medium;
+    width: 400px;
+    border-left: 2px solid $color-secondary-medium;
     padding-right: 0;
   }
 }

@@ -10,7 +10,7 @@ function UploadPage() {
   const [description, setDescription] = useState("");
 
   function videoSubmit(e) {
-    e.preventDefault(); 
+    e.preventDefault();
 
     //Generate the current timestamp
     const currentDate = new Date();
@@ -36,7 +36,9 @@ function UploadPage() {
         const requestUrl = `http://localhost:8080/upload`;
 
         const result = await axios.post(requestUrl, videoData);
-        alert("Your video is uploaded! Check out our other videos on the home page");
+        alert(
+          "Your video is uploaded! Check out our other videos on the home page"
+        );
         navigate("/");
       } catch (error) {
         console.log(error);
@@ -53,28 +55,32 @@ function UploadPage() {
         <form onSubmit={videoSubmit}>
           <div className="upload__sections">
             <div className="upload__section">
-              <h3>VIDEO THUMBNAIL</h3>
+              <h3 className="upload__thumbnail-header">VIDEO THUMBNAIL</h3>
               <img
                 src="http://localhost:8080/public/images/Upload-video-preview.jpg"
                 className="upload__thumbnail"
               ></img>{" "}
             </div>
-            <div className="upload__section">
-              <h3>TITLE YOUR VIDEO</h3>
-              <input
-                type="text"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                placeholder="Add a title to your video"
-              ></input>
-            </div>
-            <div className="upload__section">
-              <h3>ADD A VIDEO DESCRIPTION</h3>
-              <textarea
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                placeholder="Add a description to your video"
-              ></textarea>
+            <div className="upload__input-sections">
+              <div className="upload__section">
+                <h3 className="upload__title-header">TITLE YOUR VIDEO</h3>
+                <input
+                  type="text"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  placeholder="Add a title to your video"
+                ></input>
+              </div>
+              <div className="upload__section">
+                <h3 className="upload__description-header">
+                  ADD A VIDEO DESCRIPTION
+                </h3>
+                <textarea
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                  placeholder="Add a description to your video"
+                ></textarea>
+              </div>
             </div>
           </div>
           <div className="upload__buttons">
