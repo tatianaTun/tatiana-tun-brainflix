@@ -5,7 +5,7 @@ import "./VideoDetailsPage.scss";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { baseURL, apiKey } from "../../consts";
+// import { baseURL, apiKey } from "../../consts";
 
 function VideoDetailsPage() {
   const [videos, setVideos] = useState([]);
@@ -13,11 +13,44 @@ function VideoDetailsPage() {
   const { videoId } = useParams();
 
   useEffect(() => {
-    const getVideos = async () => {
+
+    //SPRINT-2
+    // const getVideos = async () => {
+    //   try {
+    //     const getRequestUrl = `${baseURL}videos?api_key=${apiKey}`;
+    //     const result = await axios.get(getRequestUrl);
+    //     const videos = result.data;
+    //     console.log(result.data);
+    //     const filteredList = videos.filter((video) => {
+    //       return video.id !== videoId;
+    //     });
+    //     setVideos(filteredList);
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    // };
+
+    // getVideos();
+
+    // const getVideo = async () => {
+    //   try {
+    //     const getRequestUrl = `${baseURL}videos/${videoId}?api_key=${apiKey}`;
+    //     const result = await axios.get(getRequestUrl);
+    //     setVideo(result.data);
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    // };
+
+    // getVideo();
+
+
+        const getVideos = async () => {
       try {
-        const getRequestUrl = `${baseURL}videos?api_key=${apiKey}`;
-        const result = await axios.get(getRequestUrl);
+        const requestUrl = `http://localhost:8080/videos`;
+        const result = await axios.get(requestUrl);
         const videos = result.data;
+
         const filteredList = videos.filter((video) => {
           return video.id !== videoId;
         });
@@ -31,8 +64,8 @@ function VideoDetailsPage() {
 
     const getVideo = async () => {
       try {
-        const getRequestUrl = `${baseURL}videos/${videoId}?api_key=${apiKey}`;
-        const result = await axios.get(getRequestUrl);
+        const requestUrl = `http://localhost:8080/videos/${videoId}`;
+        const result = await axios.get(requestUrl);
         setVideo(result.data);
       } catch (error) {
         console.log(error);
@@ -48,9 +81,9 @@ function VideoDetailsPage() {
 
   return (
     <main>
-      <VideoPlayer video={video} />
+      <VideoPlayer mainVideo={video} />
       <div className="video__bottom-section">
-      <VideoDetails video={video} />
+      <VideoDetails mainVideo={video} />
       <VideosList filteredVideos={videos} />
       </div>
     </main>

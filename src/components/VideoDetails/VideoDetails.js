@@ -4,21 +4,22 @@ import likesIcon from "../../assets/Icons/likes.svg";
 import viewsIcon from "../../assets/Icons/views.svg";
 import commentIcon from "../../assets/Icons/add_comment.svg";
 
-function VideoDetails({ video }) {
-  //video here is the prop, the prop name should be identical to the name of the prop
-  const {
-    channel,
-    comments,
-    description,
-    duration,
-    id,
-    image,
-    likes,
-    timestamp,
-    title,
-    videoUrl,
-    views,
-  } = video;
+function VideoDetails({ mainVideo }) {
+
+const {
+  channel,
+  comments,
+  description,
+  duration,
+  id,
+  image,
+  likes,
+  timestamp,
+  title,
+  videoUrl,
+  views,
+} = mainVideo;
+
 
   function formateDate(timestamp) {
     // Create a new Date object using the timestamp
@@ -86,7 +87,7 @@ function VideoDetails({ video }) {
 
         <div className="video__comments-list">
           {comments.map((comment) => (
-            <article className="video__comment">
+            <article className="video__comment" key={comment.id}>
               <div className="video__comment-avatar"></div>
               <div className="video__comment-right">
                 <div className="video__comment-top">

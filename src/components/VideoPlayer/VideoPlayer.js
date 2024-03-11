@@ -1,6 +1,6 @@
 import "./VideoPlayer.scss";
 
-function VideoDetails({ video }) {
+function VideoDetails({ mainVideo }) {
   //video here is the prop, the prop name should be identical to the name of the prop
   const {
     channel,
@@ -14,7 +14,7 @@ function VideoDetails({ video }) {
     title,
     videoUrl,
     views,
-  } = video;
+  } = mainVideo;
 
   return (
     <video className="video__media" controls poster={image}>
