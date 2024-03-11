@@ -1,7 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import HomePage from "../HomePage/HomePage";
 import "./UploadPage.scss";
-import Thumbnail from "../../assets/Images/Upload-video-preview.jpg";
 import publishIcon from "../../assets/Icons/publish.svg";
 import axios from "axios";
 import { useState } from "react";
@@ -12,13 +10,14 @@ function UploadPage() {
   const [description, setDescription] = useState("");
 
   function videoSubmit(e) {
-    e.preventDefault(); //prevents the page refresh after form submission. Without this form submit will not navigate user to the home page
+    e.preventDefault(); 
 
-     //Generate the current timestamp
+    //Generate the current timestamp
     const currentDate = new Date();
     const timestamp = currentDate.getTime();
 
     const postVideo = async () => {
+      //create a video object to be posted to backend
       const videoData = {
         title: title,
         channel: "Unknown User",
@@ -32,15 +31,12 @@ function UploadPage() {
         comments: [],
       };
 
+      //Posting to backend
       try {
         const requestUrl = `http://localhost:8080/upload`;
 
         const result = await axios.post(requestUrl, videoData);
-        console.log(result.data);
-        alert(
-          "Your video is uploaded! Check out our other videos on the home page"
-        );
-        // Navigate to the home page
+        alert("Your video is uploaded! Check out our other videos on the home page");
         navigate("/");
       } catch (error) {
         console.log(error);
@@ -49,11 +45,6 @@ function UploadPage() {
 
     postVideo();
   }
-
-  // const handleFormSubmit = (e) => {
-  //   e.preventDefault();
-  //   videoUpload();
-  // };
 
   return (
     <>

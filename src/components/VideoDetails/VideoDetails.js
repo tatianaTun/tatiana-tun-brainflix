@@ -4,23 +4,15 @@ import likesIcon from "../../assets/Icons/likes.svg";
 import viewsIcon from "../../assets/Icons/views.svg";
 import commentIcon from "../../assets/Icons/add_comment.svg";
 
-function VideoDetails({ mainVideo }) {
-
-const {
+function VideoDetails({
   channel,
   comments,
   description,
-  duration,
-  id,
-  image,
   likes,
   timestamp,
   title,
-  videoUrl,
   views,
-} = mainVideo;
-
-
+}) {
   function formateDate(timestamp) {
     // Create a new Date object using the timestamp
     const date = new Date(timestamp);

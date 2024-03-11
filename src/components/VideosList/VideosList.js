@@ -2,30 +2,6 @@ import { Link } from "react-router-dom";
 import "./VideosList.scss";
 
 function VideosList({ filteredVideos }) {
-  // const [videos, setVideos] = useState([]);
-  // const { videoId } = useParams();
-
-  // useEffect(() => {
-  //   const getVideos = async () => {
-  //     try {
-  //       const getRequestUrl = `${baseURL}videos?api_key=${apiKey}`;
-  //       const result = await axios.get(getRequestUrl);
-  //       const videos = result.data;
-  //       const filteredList = videos.filter((video) => {
-  //         return video.id !== videoId;
-  //       });
-  //       setVideos(filteredList);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-
-  //   getVideos();
-  // }, [videoId]);
-
-  // if (!videos.length) {
-  //   return <div>Loading...</div>;
-  // }
 
   return (
     <>
